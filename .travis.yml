@@ -3,7 +3,7 @@ services:
     - docker
     
 before_install:
-  - docker build -f -t joshdyck/docker-react Dockerfile.dev .
+  - docker build -t joshdyck/docker-react -f Dockerfile.dev .
 
   script: 
     - docker run joshdyck/docker-react npm run test -- --coverage 
