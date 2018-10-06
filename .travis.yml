@@ -5,7 +5,7 @@ services:
 before_install:
   - docker build -t joshdyck/docker-react -f Dockerfile.dev .
 
-  script: 
-    - docker run joshdyck/docker-react npm run test -- --coverage 
-    # -- --coverage exits to command line and returns some stuff after running tests
-    # This tells travis that it is done
+script: 
+  - docker run joshdyck/docker-react npm run test -- --coverage 
+  # -- --coverage exits to command line and returns some stuff after running tests
+  # This tells travis that it is done
