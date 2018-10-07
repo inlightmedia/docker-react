@@ -9,3 +9,16 @@ script:
   - docker run joshdyck/docker-react npm run test -- --coverage 
   # -- --coverage exits to command line and returns some stuff after running tests
   # This tells travis that it is done
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-734799825733"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
